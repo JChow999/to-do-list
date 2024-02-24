@@ -1,0 +1,84 @@
+:root {
+    font: 16px;
+    background-color: rgba(255, 255, 255, 1);
+    --header-height: 7vh;
+}
+
+#main-screen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-rows: var(--header-height), calc(100vh - var(--header-height));
+}
+
+header {
+    grid-column: 1 / -1;
+    min-height: var(--header-height);
+    background-color: rgb(130, 232, 140);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#side-menu {
+    grid-column: 1 / 2;
+    min-width: 150px;
+    min-height: calc(100vh - var(--header-height));
+    margin: 0;
+    background-color: rgb(190, 190, 255);
+}
+
+*:not(ul) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    grid-column: 2 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#todo-container {
+    display: flex;
+    justify-content: center;
+    min-width: 50vw;
+    width: 400px;
+}
+
+
+#main-container {
+    display: flex;
+    align-items: center;
+}
+
+
+#main-window {
+    width: 60vw;
+    height: 70vh;
+    background-color: rgb(227, 240, 114);
+    padding: 5px;
+}
+
+
+.side-menu-btn {
+    width: 5px;
+    height: 5px;
+    color: black;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+.project-div {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.delete-btn {
+    background-color: red;
+    width: 20px;
+}

@@ -81,7 +81,7 @@ function Todo(todo) {
 }
 
 function Project() {
-  this.projectTitle = "",
+  this.projectTitle = "Default Title",
   this.projectDue = date.toString(),
   this.projectDesc = "Enter your project description here",
   this.projectNotes = "Enter your notes",

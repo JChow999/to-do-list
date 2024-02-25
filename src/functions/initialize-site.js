@@ -23,7 +23,6 @@ function initializeMain() {
   mainContainer.id = "main-container";
   mainWindow.id = "main-window";
   
-  
   // To be removed
   let toDoElements = ['Eat food', 'Sleep', 'Drink Water'];
 

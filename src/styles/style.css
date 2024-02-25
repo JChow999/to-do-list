@@ -25,6 +25,34 @@ header {
     min-height: calc(100vh - var(--header-height));
     margin: 0;
     background-color: rgb(190, 190, 255);
+    padding: 5px;
+
+    & div {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0;
+    }
+
+    & > button {
+        width: 5px;
+        height: 5px;
+    }
+}
+
+.side-add-div {
+    display: flex;
+}
+
+.side-project-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-project-btn {
+    background-color: green;
+}
+.delete-btn {
+    background-color: red;
 }
 
 *:not(ul) {
@@ -47,12 +75,10 @@ header {
     width: 400px;
 }
 
-
 #main-container {
     display: flex;
     align-items: center;
 }
-
 
 #main-window {
     width: 60vw;
@@ -61,24 +87,11 @@ header {
     padding: 5px;
 }
 
-
-.side-menu-btn {
-    width: 5px;
-    height: 5px;
-    color: black;
-}
-
 ul {
     list-style-type: circle;
 }
-
-.project-div {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px;
-}
-
-.delete-btn {
-    background-color: red;
+button {
     width: 20px;
 }
+
+

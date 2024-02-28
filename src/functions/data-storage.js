@@ -2,6 +2,7 @@
 function initializeData() {
   let mainInfo = {
     username: "John Doe",
+    generalList: [],
     projects: [{
       projectTitle: "General",
       projectDue: Date(),
@@ -34,18 +35,9 @@ function initializeData() {
     mainInfo.projects[projectIndex].splice(listIndex, 1);
   }
   
-  function createNewProject() {
-    defaultTodo = {
-      projectTitle: "Untitled project",
-      projectDue: date.toString(),
-      projectDesc: "Enter your project description here",
-      projectNotes: "Enter your notes",
-      projectTodo: {
-        todoList: [],
-        todoFinished: [],
-      },
-    },
-    mainInfo.projects.push(defaultTodo);
+  function addNewProject() {
+    let newProject = new Project();
+    mainInfo.projects.push(newProject);
   }
   
   function editProject(projectIndex, section, info) {
@@ -63,26 +55,31 @@ function initializeData() {
   }
 
   function getProjects() {
-    for (let x = 0; i < length(mainInfo.projects); x++) {
-      console.log(x, mainInfo.projects[x]);
+    let projectNames = []
+
+    for (let x = 0; x < mainInfo.projects.length; x++) {
+      projectNames.push(mainInfo.projects[x].projectTitle)
     }
+    console.log(projectNames)
+    return projectNames
   }
 
   function getAllInfo() {
     console.log(mainInfo);
   }
 
-  return createNewTodo, editTodo, deleteTodo, deleteTodoList, createNewProject, editProject, deleteProject, getProjects, getAllInfo;
+  return { createNewTodo, editTodo, deleteTodo, deleteTodoList, addNewProject, addNewProject, editProject, deleteProject, getProjects, getAllInfo }
 }
 
 function Todo(todo) {
   this.todo = todo;
+  this.numbered = false;
   this.finished = false;
 }
 
 function Project() {
   this.projectTitle = "Default Title",
-  this.projectDue = date.toString(),
+  this.projectDue = Date.toString(),
   this.projectDesc = "Enter your project description here",
   this.projectNotes = "Enter your notes",
   this.projectTodo = {

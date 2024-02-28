@@ -9,11 +9,17 @@ function initializeMain() {
   const todoContainer = document.createElement('div')
   const mainContainer = document.createElement('div');
   const mainWindow = document.createElement('div');
+  const addBtn = document.querySelector("#add-project-btn")
 
-  const newProjectBtn = document.createElement('button');
-  newProjectBtn.addEventListener('click', () => {
-    return
-  })
+  const todoData = initializeData();
+
+  // Prints out project list into console
+  document.onkeydown = (e) => {
+    console.log(e)
+    if (e.key == "p") {
+      todoData.getProjects()
+    }
+  }
 
   const newListBtn = document.createElement('button');
 
@@ -27,7 +33,7 @@ function initializeMain() {
   let toDoElements = ['Eat food', 'Sleep', 'Drink Water'];
 
   mainScreen.appendChild(buildHeader());
-  mainScreen.appendChild(buildSideMenu());
+  mainScreen.appendChild(buildSideMenu(todoData.addNewProject, todoData.getProjects));
   wrapper.appendChild(todoContainer);
   todoContainer.appendChild(mainContainer);
   mainWindow.appendChild(buildBulletList(toDoElements));

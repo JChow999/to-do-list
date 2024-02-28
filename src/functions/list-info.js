@@ -3,6 +3,7 @@
  * the function. It allows for an optional title as well.
  * @return {string} - Return
  */
+
 function buildBulletList(listBullets) {
     const container = document.createElement('div');
     const listTitle = document.createElement('h3');

@@ -1,6 +1,8 @@
 :root {
     font: 16px;
     background-color: rgba(255, 255, 255, 1);
+    --side-green: rgba(0, 110, 0, 1);
+    --side-red: red;
     --header-height: 7vh;
 }
 
@@ -40,19 +42,21 @@ header {
 }
 
 .side-add-div {
+    color: var(--side-green);
     display: flex;
+
+    & button {
+        background-color: var(--side-green);
+    }
 }
 
 .side-project-div {
     display: flex;
     justify-content: space-between;
-}
 
-.add-project-btn {
-    background-color: green;
-}
-.delete-btn {
-    background-color: red;
+    & button {
+        background-color: var(--side-red);
+    }
 }
 
 *:not(ul) {

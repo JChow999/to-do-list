@@ -1,11 +1,10 @@
-
-function buildSideMenu() {
+function buildSideMenu(addfunction, projectsFunct) {
   const sideMenu = document.createElement('div');
   let addDiv = document.createElement("div");
   let addText = document.createElement("h3");
   
-  addDiv.className = "side-add-div"
-  addText.innerText = "Add Project"
+  addDiv.className = "side-add-div";
+  addText.innerText = "Add Project";
   addDiv.appendChild(addText);
   
   let addBtn = document.createElement("button");
@@ -16,7 +15,9 @@ function buildSideMenu() {
   let projectList = ['newProject1', 'project2', 'cat project', 'dog project'];
 
   addBtn.addEventListener("click", () => {
-    updateSideMenu(projectList)
+    addfunction();
+    console.log(projectsFunct())
+    updateSideMenu(projectsFunct());
   })
 
   sideMenu.id = "side-menu";

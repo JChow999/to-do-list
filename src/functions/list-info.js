@@ -4,6 +4,19 @@
  * @return {string} - Return
  */
 
+function buildMainWindow(information) {
+    const wrapper = document.createElement('div');
+    const todoContainer = document.createElement('div')
+    const mainContainer = document.createElement('div');
+    const mainWindow = document.createElement('div');
+
+    return
+}
+
+function updateProjectDisplay() {
+    return
+}
+
 function buildBulletList(listBullets) {
     const container = document.createElement('div');
     const listTitle = document.createElement('h3');

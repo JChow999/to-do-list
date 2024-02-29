@@ -15,11 +15,11 @@ function initializeMain() {
 
   // Prints out project list into console
   document.onkeydown = (e) => {
-    console.log(e)
     if (e.key == "p") {
-      todoData.getProjects()
+      todoData.getAllInfo()
     }
   }
+
 
   const newListBtn = document.createElement('button');
 

@@ -16,7 +16,6 @@ function buildSideMenu(addfunction, projectsFunct) {
 
   addBtn.addEventListener("click", () => {
     addfunction();
-    console.log(projectsFunct())
     updateSideMenu(projectsFunct());
   })
 
@@ -34,6 +33,8 @@ function updateSideMenu(information) {
     let projectDiv = document.createElement("div");
     let projectName = document.createElement("h3");
     let deleteButton = document.createElement("button");
+
+    projectDiv.setAttribute("data-index", x);
 
     projectDiv.className = "side-project-div";
     deleteButton.className = "delete-btn";

@@ -50,6 +50,11 @@ header {
     }
 }
 
+.project-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .side-project-div {
     display: flex;
     justify-content: space-between;
@@ -72,11 +77,8 @@ header {
     justify-content: center;
 }
 
-#todo-container {
+.project-list-container {
     display: flex;
-    justify-content: center;
-    min-width: 50vw;
-    width: 400px;
 }
 
 #main-container {
@@ -98,4 +100,20 @@ button {
     width: 20px;
 }
 
+.todo-container {
+    display: flex;
+}
 
+.todo-front {
+    display: flex;
+
+    & button {
+        margin-right: 5px;
+    }
+}
+
+.todo-div {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}

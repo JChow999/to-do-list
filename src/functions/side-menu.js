@@ -2,32 +2,34 @@ function buildSideMenu(addfunction, projectsFunct) {
   const sideMenu = document.createElement('div');
   let addDiv = document.createElement("div");
   let addText = document.createElement("h3");
+  let projectList = document.createElement("div");
   
   addDiv.className = "side-add-div";
   addText.innerText = "Add Project";
   addDiv.appendChild(addText);
+
+  projectList.classList = "project-container";
   
   let addBtn = document.createElement("button");
   addBtn.className = "add-project-btn";
   addDiv.appendChild(addBtn);
-
-  // To be deleted
-  let projectList = ['newProject1', 'project2', 'cat project', 'dog project'];
 
   addBtn.addEventListener("click", () => {
     addfunction();
     updateSideMenu(projectsFunct());
   })
 
+  projectList.innerHTML = generateProjectElements(projectsFunct())
+
   sideMenu.id = "side-menu";
   sideMenu.appendChild(addDiv);
+  sideMenu.appendChild(projectList);
+  
   return sideMenu;
 }
 
-function updateSideMenu(information) {
-  let sideMenu = document.querySelector("#side-menu");
-
-  document.querySelectorAll(".side-project-div").forEach(e => e.remove());
+function generateProjectElements(information) {
+  let projectContainer = document.createElement("div");
 
   for (let x = 0; x < information.length; x++) {
     let projectDiv = document.createElement("div");
@@ -41,17 +43,29 @@ function updateSideMenu(information) {
     projectName.innerText = information[x];
 
     deleteButton.addEventListener("click", () => {
-      deleteProject(projectName.innerText)
+      deleteProject(information[x]);
     })
 
     projectDiv.appendChild(projectName);
     projectDiv.appendChild(deleteButton);
-    sideMenu.appendChild(projectDiv);
+    projectContainer.appendChild(projectDiv);
   }
+
+  return projectContainer.innerHTML;
+}
+
+function updateSideMenu(projectArray) {
+  let projectCont = document.querySelector(".project-container")
+  
+  projectCont.innerHTML = generateProjectElements(projectArray)
+}
+
+function editProjectTitle() {
+  return
 }
 
 function deleteProject(info) {
   console.log(info)
 }
 
-export { buildSideMenu, updateSideMenu }
+export { buildSideMenu, updateSideMenu, generateProjectElements }

@@ -1,4 +1,4 @@
-import { buildBulletList } from "./list-info";
+import { buildBulletList } from "./main-window";
 import { buildSideMenu, updateSideMenu } from "./side-menu";
 import { buildHeader } from "./header";
 import { initializeData } from "./data-storage";
@@ -9,17 +9,15 @@ function initializeMain() {
   const todoContainer = document.createElement('div')
   const mainContainer = document.createElement('div');
   const mainWindow = document.createElement('div');
-  const addBtn = document.querySelector("#add-project-btn")
 
   const todoData = initializeData();
 
-  // Prints out project list into console
-  document.onkeydown = (e) => {
-    if (e.key == "p") {
-      todoData.getAllInfo()
-    }
-  }
-
+  // // Prints out project list into console
+  // document.onkeydown = (e) => {
+  //   if (e.key == "p") {
+  //     todoData.getAllInfo()
+  //   }
+  // }
 
   const newListBtn = document.createElement('button');
 

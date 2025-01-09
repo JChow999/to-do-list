@@ -4,6 +4,7 @@ function initializeData() {
     username: "John Doe",
     projects: [{
       projectTitle: "General",
+      generalTodo: [],
       projectDue: Date(),
       projectDesc: "Your General projects",
       projectNotes: "Your simple notes. Push your water glass on the floor. Cereal boxes make for five star accommodation hunt anything." + 
@@ -87,7 +88,6 @@ function initializeData() {
     for (let x = 0; x < mainInfo.projects.length; x++) {
       projectNames.push(mainInfo.projects[x].projectTitle)
     }
-    console.log(projectNames)
     return projectNames
   }
 

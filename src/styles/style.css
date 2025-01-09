@@ -1,5 +1,6 @@
 :root {
     font: 16px;
+    /* background-color: black; */
     background-color: rgba(255, 255, 255, 1);
     --side-green: rgba(0, 110, 0, 1);
     --side-red: red;
@@ -8,7 +9,7 @@
 
 #main-screen {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     grid-template-rows: var(--header-height), calc(100vh - var(--header-height));
 }
 
@@ -28,40 +29,55 @@ header {
     margin: 0;
     background-color: rgb(190, 190, 255);
     padding: 5px;
-
-    & div {
+    
+    & > div {
         display: flex;
         justify-content: space-between;
         margin: 5px 0;
     }
-
+    
     & > button {
         width: 5px;
         height: 5px;
     }
 }
 
+.side-project-btns {
+    display: flex;
+    margin: 0 0 0 3px;
+    gap: 5px;
+}
+
 .side-add-div {
     color: var(--side-green);
     display: flex;
-
+    
     & button {
         background-color: var(--side-green);
     }
 }
 
+
 .project-container {
     display: flex;
     flex-direction: column;
+
+    & > div {
+        margin: 3px 0px;
+    }
 }
 
 .side-project-div {
     display: flex;
     justify-content: space-between;
+}
 
-    & button {
-        background-color: var(--side-red);
-    }
+.edit-btn {
+    background-color: yellow;
+}
+
+.delete-btn {
+    background-color: var(--side-red);
 }
 
 *:not(ul) {
@@ -93,10 +109,12 @@ header {
     padding: 5px;
 }
 
-ul {
-    list-style-type: circle;
+.todo-checkbox {
+    margin-right: 5px;
 }
-button {
+
+button, .todo-checkbox  {
+    height: 20px;
     width: 20px;
 }
 
@@ -106,6 +124,7 @@ button {
 
 .todo-front {
     display: flex;
+    text-align: center;
 
     & button {
         margin-right: 5px;

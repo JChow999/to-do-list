@@ -13,6 +13,10 @@
 //     return
 // }
 
+function createMainWindow() {
+
+}
+
 function updateProjectDisplay() {
     return
 }
@@ -30,16 +34,25 @@ function buildTodoList(listBullets) {
     for (let x = 0; x < listBullets.length; x++) {
         let todoDiv = document.createElement("div");
         let todoFront = document.createElement("div");
-        let finishBox = document.createElement("button");
         let todoText = document.createElement('p');
         let deleteBtn = document.createElement("button");
+        
+        let checkBox = document.createElement("input");
+        checkBox.className = "todo-checkbox";
+        checkBox.type = "checkbox";
+
+        checkBox.name = "finished-todo"
 
         todoFront.className = "todo-front";
         todoDiv.className = "todo-div";
         deleteBtn.className = "todo-delete";
         todoText.innerText = listBullets[x];
 
-        todoFront.appendChild(finishBox);
+        deleteBtn.addEventListener("click", () => {
+            console.log(`delete ${x}`)
+        })
+
+        todoFront.appendChild(checkBox);
         todoFront.appendChild(todoText);
         todoDiv.appendChild(todoFront);
         todoDiv.appendChild(deleteBtn);

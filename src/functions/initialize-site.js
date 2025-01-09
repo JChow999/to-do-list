@@ -12,12 +12,12 @@ function initializeMain() {
 
   const todoData = initializeData();
 
-  // // Prints out project list into console
-  // document.onkeydown = (e) => {
-  //   if (e.key == "p") {
-  //     todoData.getAllInfo()
-  //   }
-  // }
+  // Prints out project list into console
+  document.onkeydown = (e) => {
+    if (e.key == "p") {
+      console.log(todoData.getProjects())
+    }
+  }
 
   const newListBtn = document.createElement('button');
 
